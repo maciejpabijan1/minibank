@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniBank - Logowanie</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="karta">
+    <h1>Zaloguj się do MiniBanku</h1>
+
+    <form action="/zaloguj" method="POST">
+        <label>Numer Konta:</label>
+        <input type="text" name="nrKonta" required>
+
+        <label>Hasło:</label>
+        <input type="password" name="haslo" required>
+
+        <button type="submit">Zaloguj się</button>
+    </form>
+
+    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+</div>
+</body>
+</html>

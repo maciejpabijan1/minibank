@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Przelew wysłany</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="karta">
+    <h1>Przelew pomyślnie wysłany</h1>
+
+    <ul>
+        <li><strong>Numer konta:</strong> <span th:text="${nrKontaA}">123</span></li>
+        <li><strong>Imię:</strong> <span th:text="${imieA}">imie</span></li>
+        <li><strong>Nazwisko:</strong> <span th:text="${nazwiskoA}">nazwisko</span></li>
+        <li><strong>Kwota:</strong> <span th:text="${kwota}">0.00</span> zł</li>
+    </ul>
+
+    <a href="/">Powrót do przelewów</a>
+</div>
+</body>
+</html>

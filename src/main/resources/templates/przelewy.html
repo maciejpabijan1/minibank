@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniBank</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="dashboard-naglowek">
+        <h1>MiniBank</h1>
+        <form action="/wyloguj" method="POST">
+            <button type="submit" class="btn-wyloguj">Wyloguj</button>
+        </form>
+    </div>
+
+    <div class="dashboard-siatka">
+
+
+        <div class="panel">
+            <h2 class="panel-tytul">Moje konto</h2>
+            <div class="dane-uzytkownika">
+                <div class="dane-wiersz">
+                    <span class="dane-etykieta">Imię</span>
+                    <span class="dane-wartosc" th:text="${imieUzytkownika}"></span>
+                </div>
+                <div class="dane-wiersz">
+                    <span class="dane-etykieta">Nazwisko</span>
+                    <span class="dane-wartosc" th:text="${nazwiskoUzytkownika}"></span>
+                </div>
+                <div class="dane-wiersz">
+                    <span class="dane-etykieta">Numer konta</span>
+                    <span class="dane-wartosc" th:text="${nrKontaUzytkownika}"></span>
+                </div>
+                <div class="dane-wiersz saldo-wiersz">
+                    <span class="dane-etykieta">Saldo</span>
+                    <span class="dane-wartosc saldo" th:text="${saldoUzytkownika}">0.00</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel">
+            <h2 class="panel-tytul">Wyślij przelew</h2>
+            <form action="/wykonaj-przelew" method="POST">
+                <label>Numer konta odbiorcy:</label>
+                <input type="text" name="nrKontaOdbiorcy">
+
+                <label>Kwota (zł):</label>
+                <input type="number" step="0.01" name="kwota">
+
+                <button type="submit">Wyślij</button>
+            </form>
+        </div>
+
+
+        <div class="panel">
+            <h2 class="panel-tytul">Historia transakcji</h2>
+            <ul class="historia">
+                <li class="historia-brak">
+                    Brak transakcji
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="panel">
+            <h2 class="panel-tytul">Szybkie kontakty</h2>
+            <ul class="kontakty">
+                <li class="historia-brak">
+                    Brak zapisanych kontaktów
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

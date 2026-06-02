@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Błąd!</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="karta">
+    <h1>Wystąpił problem</h1>
+
+    <div class="blad-komunikat">
+        <span th:text="${komunikat}">error</span>
+    </div>
+
+    <a href="/">Kontynuuj</a>
+</div>
+</body>
+</html>
