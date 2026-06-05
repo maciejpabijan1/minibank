@@ -1,21 +1,66 @@
 # MiniBank
 
-A simple online banking web application built with **Spring Boot**. The main goal of this project is to practice clean architecture, business logic validation, and database safety.
+MiniBank is a web application built with Spring Boot that simulates basic online banking operations. The project was created to practice layered application architecture, business logic validation, user authentication, and transactional data management.
 
-## 🚀 Features
-* **User Login:** Secure login system with password hashing.
-* **Account Overview:** View current balance, account number, and user profile details.
-* **Money Transfers:** Send money between different bank accounts.
-* **Smart Validation:** All business rules (e.g., checking if the amount is greater than 0 or if the sender has enough money) are handled safely in the Service layer.
-* **Data Safety:** Uses `@Transactional` to ensure that bank transfers either succeed completely or make no changes to the database if an error occurs.
+## Features
 
-## 🛠️ Technologies Used
-* **Language:** Java
-* **Framework:** Spring Boot (Spring Web, Spring Data JPA)
-* **Database:** H2 (In-Memory Database)
-* **Template Engine:** Thymeleaf (HTML)
+* User authentication with session management (HttpSession)
+* Secure password storage using SHA-256 hashing
+* Account overview with balance and account information
+* Money transfers between accounts
+* Business rule validation:
 
-## ⚙️ How to run
-1. Open the project in IntelliJ IDEA.
-2. Run the `MinibankApplication` class.
-3. Open `http://localhost:8080` in your browser.
+    * transfer amount must be greater than zero
+    * sender and recipient accounts must be different
+    * sender must have sufficient funds
+* Error handling with user-friendly messages
+* Transactional transfer processing using `@Transactional`
+
+## Technologies
+
+* Java
+* Spring Boot
+* Spring MVC
+* Spring Data JPA
+* Hibernate
+* Thymeleaf
+* H2 Database
+* Maven
+
+## Architecture
+
+The application follows a layered architecture:
+
+* Controller Layer – handles HTTP requests and responses
+* Service Layer – contains business logic and transfer validation
+* Repository Layer – database access through Spring Data JPA
+* Entity Layer – domain model representing bank accounts
+
+## Sample Accounts
+
+| Account Number | Password |
+| -------------- | -------- |
+| 11111111111    | 123      |
+| 22222222222    | haslo    |
+
+## Running the Application
+
+1. Clone the repository
+2. Open the project in IntelliJ IDEA
+3. Run `MinibankApplication`
+4. Open:
+
+```text
+http://localhost:8080
+```
+
+## Learning Goals
+
+This project was created to gain practical experience with:
+
+* Spring Boot application development
+* Layered architecture
+* Database operations with JPA
+* Transaction management
+* Session-based authentication
+* Validation of business rules
